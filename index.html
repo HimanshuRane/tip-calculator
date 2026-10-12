@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Tip Calculator</h1>
+      <p class="subtitle">Enter your bill details to split the tip fairly.</p>
+
+      <form id="tip-form" novalidate>
+        <label for="bill">Bill amount ($)</label>
+        <input
+          type="number"
+          id="bill"
+          name="bill"
+          min="0"
+          step="0.01"
+          placeholder="0.00"
+        />
+
+        <p class="label">Select a tip</p>
+        <div class="tip-buttons" role="group" aria-label="Tip percentage">
+          <button type="button" class="tip-btn" data-tip="5">5%</button>
+          <button type="button" class="tip-btn" data-tip="10">10%</button>
+          <button type="button" class="tip-btn" data-tip="15">15%</button>
+          <button type="button" class="tip-btn" data-tip="20">20%</button>
+        </div>
+
+        <label for="people">Number of people</label>
+        <input
+          type="number"
+          id="people"
+          name="people"
+          min="1"
+          step="1"
+          placeholder="1"
+        />
+
+        <p id="error" class="error" role="alert"></p>
+
+        <section class="results" aria-live="polite">
+          <div class="result-row">
+            <span>Tip amount</span>
+            <strong id="tip-amount">$0.00</strong>
+          </div>
+          <div class="result-row">
+            <span>Total bill</span>
+            <strong id="total-bill">$0.00</strong>
+          </div>
+          <div class="result-row">
+            <span>Amount per person</span>
+            <strong id="per-person">$0.00</strong>
+          </div>
+        </section>
+
+        <button type="button" id="reset" class="reset-btn">Reset</button>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
